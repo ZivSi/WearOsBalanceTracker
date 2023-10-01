@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance:"
+                android:textColor="@color/galaxyWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/balanceValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 ₪"
+                android:textColor="@color/galaxyWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="10dp"
+                android:rowCount="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/balanceValueTextView">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/addBalanceCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:clickable="true"
+                    android:elevation="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_add"
+                        android:tint="@color/galaxyWhite" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/removeBalanceCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:clickable="true"
+                    android:elevation="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_remove"
+                        android:tint="@color/galaxyWhite" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/propertiesBalanceCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:clickable="true"
+                    android:elevation="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:onClick="setBalanceProperties"
+                        android:src="@drawable/ic_baseline_attach_money"
+                        android:tint="@color/galaxyWhite" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/historyBalanceCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:clickable="true"
+                    android:elevation="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_history"
+                        android:tint="@color/galaxyWhite" />
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/nextMonthPredictionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Next month prediction:"
+                android:textColor="@color/galaxyWhite"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+            <TextView
+                android:id="@+id/expensesLeftTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Expenses left:"
+                android:textColor="@color/galaxyWhite"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.wear.widget.BoxInsetLayout>
